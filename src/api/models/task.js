@@ -8,6 +8,7 @@ const taskSchema = new mongoose.Schema(
     completed: { type: Boolean, default: false },
     place: { type: mongoose.Schema.Types.ObjectId, ref: "Place" },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    img: { type: String, required: true },
   },
   {
     collection: "tasks"

@@ -4,7 +4,8 @@ const placeSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     location: { type: String, required: true },
-    home: { type: Boolean, required: true }
+    home: { type: Boolean, required: true },
+    img: { type: String, required: true },
   },
   {
     collection: "places"

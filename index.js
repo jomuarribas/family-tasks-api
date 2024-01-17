@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 const express = require("express");
+const cloudinary = require("cloudinary").v2;
 const { familyTasksDB } = require("./src/api/config/familyTasksDB");
 const placesRoutes = require("./src/api/routes/place");
 const tasksRoutes = require("./src/api/routes/task");
@@ -9,6 +10,12 @@ const usersRoutes = require("./src/api/routes/user");
 const app = express();
 
 familyTasksDB()
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 app.use(express.json());
 
